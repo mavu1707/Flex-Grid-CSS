@@ -2,3 +2,66 @@
     width: 100px;
     height: auto;
 }
+
+#gridContainer{
+    display: grid;
+    grid-template-areas: "header header header"
+    ". featured ."
+    ". main ."
+    "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+header{
+    grid-area: header;
+}
+/*
+header nav ul{
+    display: flex;
+}*/
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header nav ul li{
+    display: inline-block;
+}
+
+.featured-items{
+    grid-area: featured;
+    display: flex;
+    flex-wrap: wrap; /*Dette for at artiklene kan wrappe under, dynamisk for telefoner*/
+    justify-content: space-between;
+}
+
+.featured-items h2{
+    flex-basis: 100%; /*Vidden din skal ta opp hele plassen*/
+    
+}
+/*
+.featured-items article{
+    flex-grow: 1;
+}
+*/
+.featured-items img{
+    width: 100%;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main article{
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+footer{
+    grid-area: footer;
+}
